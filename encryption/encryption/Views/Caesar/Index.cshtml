@@ -1,0 +1,158 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@* <a asp-action="Encrypt" asp-route-sourceText="@ViewBag.Content" asp-route-step="1">Encrypt</a>
+<a asp-action="Decrypt" asp-route-sourceText="@ViewBag.Content" asp-route-step="1">Decrypt</a> *@
+@* <form method="post" asp-action="Encrypt" asp-controller="Caesar">
+	<input type="hidden" name="sourceText" value="@ViewBag.Content" />
+	<input type="number" name="step" value="1" />
+	<button type="submit" class="stylish-link">Encrypt</button>
+</form>
+
+<form method="post" asp-action="Decrypt" asp-controller="Caesar">
+	<input type="hidden" name="sourceText" value="@ViewBag.Content" />
+	<input type="number" name="step" value="1" />
+	<button type="submit" class="stylish-link">Decrypt</button>
+</form>
+ *@
+
+
+
+
+
+<div class="outterbox">
+	<div class="Box2">
+		<h1>SourceText:</h1>
+		<p>@ViewBag.Content</p>
+
+	</div>
+
+	<div class="Box">
+			<div class="container">
+			<form method="post" asp-action="Encrypt" asp-controller="Caesar">
+				
+				<input type="hidden" id="sourceText" name="sourceText" value="@ViewBag.Content">
+					<label for="step">Step:</label>
+				<input type="number" name="step" value="1"></input><br>
+				<button type="submit" class="stylish-link">Encrypt</button><br>
+				</form>
+			</div>
+
+			<div class="container">
+			<form method="post" asp-action="Decrypt" asp-controller="Caesar">
+				
+				
+				<input type="hidden" id="sourceText" name="sourceText" value="@ViewBag.Content">
+				<label for="step">Step:</label>
+
+				<input type="number" name="step" value="1"></input><br>
+				<button type="submit" class="stylish-link">Decrypt</button><br>
+				</form>
+			</div>
+		<div class="container">
+
+			
+
+		</div>
+
+
+
+
+	</div>
+</div>
+
+
+<style>
+	label{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 18px;
+
+	}
+	input{
+	width: 45px;
+	font-size: 18px;
+	margin-left: 6px;
+
+	}
+
+
+	form{
+	display: flex;
+	}
+	h1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	}
+	.outterbox{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	}
+
+	body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f4f4f4;
+	margin: 0;
+	display: flex;
+	align-items: flex-start;
+
+	height: 100vh;
+	}
+
+	.container {
+	text-align: center;
+	width: 200px;
+	margin: 7px;
+	}
+
+	.stylish-link {
+	display: inline-block;
+	text-decoration: none;
+	color: #fff;
+	background-color: rgb(40, 41, 44);
+	padding: 10px 20px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease-in-out;
+	}
+
+	.stylish-link:hover {
+	background-color: rgb(20, 21, 24);
+	}
+
+	button, a {
+	width: 100px;
+	border: 0px;
+	font-size: 18px;
+	margin-left: 6px;
+	}
+
+	a{
+	width: 60px;
+	}
+
+	.Box2 {
+	border: 2px solid rgb(20, 21, 24);
+	border-radius: 8px;
+	padding: 15px;
+	margin: 15px;
+	background-color: #ecf0f1;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	}
+
+	.Box2 p {
+	font-size: 18px;
+	color: #333;
+	margin: 0;
+	line-height: 1.5;
+
+	}
+</style>
